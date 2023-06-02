@@ -1,23 +1,30 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { List, ListGroup } from "reactstrap";
 import { Link } from "react-router-dom";
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 const Menus = () =>{
+    const { t, i18n } = useTranslation();
+    useEffect(() => {
+        const lng = navigator.language;
+        i18n.changeLanguage(lng);
+      }, []);
     return( 
         <ListGroup>
             <Link className="list-group-item list-group-item-action" tag="a" to="/" action>
-                Home
+            {t("H_BUT")}
             </Link>
             <Link className="list-group-item list-group-item-action" tag="a" to="/add-course" action>
-                Add Course
+            {t("AC_BUT1")}
             </Link>
             <Link className="list-group-item list-group-item-action" tag="a" to="/view-courses" action>
-                View Course
+            {t("View_Course")}
             </Link>
             <Link className="list-group-item list-group-item-action" tag="a" to="#!" action>
-                About
+            {t("About")}
             </Link>
             <Link className="list-group-item list-group-item-action" tag="a" to="#!" action>
-                Contact
+            {t("Contact")}
             </Link>
         </ListGroup>
     )
