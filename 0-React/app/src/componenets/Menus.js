@@ -20,10 +20,10 @@ const Menus = () =>{
             <Link className="list-group-item list-group-item-action" tag="a" to="/view-courses" action>
             {t("View_Course")}
             </Link>
-            <Link className="list-group-item list-group-item-action" tag="a" to="#!" action>
+            <Link className="list-group-item list-group-item-action" tag="a" to="/about" action>
             {t("About")}
             </Link>
-            <Link className="list-group-item list-group-item-action" tag="a" to="#!" action>
+            <Link className="list-group-item list-group-item-action" tag="a" to="/contact" action>
             {t("Contact")}
             </Link>
         </ListGroup>

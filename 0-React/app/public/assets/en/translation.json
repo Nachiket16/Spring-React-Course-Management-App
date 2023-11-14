@@ -1,7 +1,7 @@
 {
     "WELCOME": "Spring Boot Application",
     "welcome_message": "Spring Boot Application",
-    "H-P":"This is practice app which will be connected with spring",
+    "H-P":"Course management",
     "AC_H":"Fill The Course Details",
     "AC_F1_ID":"Course Id",
     "AC_F1_TIT":"Course title",

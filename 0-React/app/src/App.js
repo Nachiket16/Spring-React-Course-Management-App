@@ -4,10 +4,12 @@ import { Button, Container, Row, Col } from "reactstrap"
 import {ToastContainer, toast} from "react-toastify"
 import Home from './componenets/Home';
 import Header from './componenets/Header';
-import Course from './componenets/Course';
 import Allcourses from './componenets/Allcourses'
 import AddCourse from './componenets/AddCourse';
 import Menus from './componenets/Menus';
+import Contact from "./componenets/Contact";
+import About from "./componenets/About";
+import UpdateCourseForm from "./componenets/UpdateCourseForm";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
@@ -61,7 +63,7 @@ function App() {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            lang
+            Lang
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             {languages.map(({ code, name, state }) => (
@@ -85,6 +87,9 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/add-course' element={<AddCourse />} />
                 <Route path='/view-courses' element={<Allcourses />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/update-course/:id' element={<UpdateCourseForm/>} />
               </Routes>
             </Col>
           </Row>

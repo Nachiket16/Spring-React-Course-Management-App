@@ -11,7 +11,6 @@ import HttpApi from "i18next-http-backend";
 
 import App from "./App";
 
-
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)
@@ -26,18 +25,12 @@ i18n
     backend:{
        loadPath: 'assets/{{lng}}/translation.json'
     },
-    react: { useSuspense: false}
+    react: { useSuspense: false }
   });
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <App />
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

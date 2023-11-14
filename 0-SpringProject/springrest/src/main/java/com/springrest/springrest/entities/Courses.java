@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class Courses {
 	
 	@Id
-	private long id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Long id;
 	private String title;
 	private String description;
 	public Courses(long id, String title, String description) {

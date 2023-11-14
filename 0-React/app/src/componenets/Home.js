@@ -1,23 +1,21 @@
-import React, {useEffect} from "react";
-import i18next from "i18next";
-import { useTranslation } from "react-i18next";
-const Home = () =>{
-    const { t, i18n } = useTranslation();
-    useEffect(() => {
-        const lng = navigator.language;
-        i18n.changeLanguage(lng);
-      }, []);
-    useEffect(()=>{
-        document.title="Welcome Home"
-    }, []);
-    return(
-        <div className="text-center">
-                <h1>{t("welcome_message")}</h1>
-                <p>
-                {t("H-P")}
-                </p>
-        </div>
-    );
-}
+// Home.js
+
+import React from 'react';
+import './Home.css'; // Import the CSS file
+import { Link } from 'react-router-dom';
+
+const Home = () => {
+  return (
+    <div className="home-container">
+      <div className="intro">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Explore my skills, projects, and experience.</p>
+        <Link to="/about" className="btn-primary">
+          Learn More
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 export default Home;

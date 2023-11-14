@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import { Button, Container, Form, FormGroup, Input } from "reactstrap";
 import base_url from "../api/bootapi";
 import i18next from "i18next";
+import { toast, ToastContainer } from "react-toastify";
 import { useTranslation } from "react-i18next";
 
 const AddCourse = () =>{
@@ -29,10 +30,10 @@ const AddCourse = () =>{
         axios.post(`${base_url}/courses`,course)
         .then((response)=>{
                 console.log(response)
-                alert("success")
+                toast.success("course added successfully")
             },(error)=>{
                 console.log(error)
-                alert("error")
+                toast.warn("failed to add course")
             }
         )
     }
@@ -71,7 +72,6 @@ const AddCourse = () =>{
                 </FormGroup>
                 <Container className="text-center">
                     <Button type="submit" color="success">{t("AC_BUT1")}</Button>
-                    <Button color="warning" style={{marginLeft:'20px'}}>{t("AC_BUT2")}</Button>
                 </Container>
             </Form>
         </div>
